@@ -5,7 +5,7 @@
 </div>
 <form role="form">
 <div class="container">
-  <h2>Indicate Requests: and also {{word}}</h2>
+  <h2>Indicate Requests:</h2>
   <div class="row">
     <div class="col-xs-4">
       <div class="checkbox">
@@ -66,15 +66,15 @@
   <div class="row">
     <div class="col-xs-6">
       <div class="form-group">
-        <label for="ministry-event-or-project-name">Event or Project Name</label>
-        <input type="text" class="form-control" id="ministry-event-or-project-name" placeholder="Event or Project Name">
+        <label for="ministry-event-or-project-name">Event or Project Name is {{form.ministryEventName}}</label>
+        <input type="text" class="form-control" id="ministry-event-or-project-name" placeholder="Event or Project Name" ng-model="form.ministryEventName">
       </div>
     </div>
     <div class="col-xs-2">
       <div class="form-group">
-      <label for"ministry">Ministry</label>
-      <select class="form-control" id="ministry">
-        <option>FSM</option>
+      <label for"ministry">Ministry is {{form.ministryChoice}}</label>
+      <select class="form-control" id="ministry" ng-model="ministryChoice">
+        <option value="Fsm">FSM</option>
         <option>FSK</option>
         <option>Missions</option>
         <option>Assimilation</option>
@@ -89,34 +89,34 @@
     </div>
     <div class="col-xs-4">
       <div class="form-group">
-        <label for="ministry-account-number">Account Number</label>
-        <input type="number" class="form-control" id="ministry-account-number" placeholder="Account Number">
+        <label for="ministry-account-number">Account Number is {{form.ministryAccount}}</label>
+        <input type="number" class="form-control" id="ministry-account-number" placeholder="Account Number" ng-model="ministryAccount">
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-3">
       <div class="form-group">
-        <label for="ministry-project-contact">Project Contact</label>
-        <input type="text" class="form-control" id="ministry-project-contact" placeholder="Project Contact">
+        <label for="ministry-project-contact">Project Contact is {{ministryProjectContact}}</label>
+        <input type="text" class="form-control" id="ministry-project-contact" placeholder="Project Contact" ng-model="ministryProjectContact">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
-        <label for="ministry-contact-phone">Project Contact's phone</label>
-        <input type="tel" class="form-control" id="ministry-contact-phone" placeholder="Project Contact's phone">
+        <label for="ministry-contact-phone">Project Contact's phone is {{ministryProjectContactPhone}}</label>
+        <input type="tel" class="form-control" id="ministry-contact-phone" placeholder="Project Contact's phone" ng-model="ministryProjectContactPhone">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
-        <label for="ministry-overseer">Ministry Overseer</label>
-        <input type="text" class="form-control" id="ministry-overseer" placeholder="Ministry Overseer">
+        <label for="ministry-overseer">Ministry Overseer is {{ministryOverseer}}</label>
+        <input type="text" class="form-control" id="ministry-overseer" placeholder="Ministry Overseer" ng-model="ministryOverseer">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
-        <label for="ministry-overseer-phone">Overseer's phone</label>
-        <input type="tel" class="form-control" id="ministry-overseer-phone" placeholder="Overseer's phone">
+        <label for="ministry-overseer-phone">Overseer's phone is {{ministryOverseerPhone}}</label>
+        <input type="tel" class="form-control" id="ministry-overseer-phone" placeholder="Overseer's phone" ng-model="ministryOverseerPhone">
       </div>
     </div>
   </div>  

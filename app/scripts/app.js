@@ -5,7 +5,8 @@ var app = angular.module('fellowshipCrfApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'firebase'
   ]);
 
 app.config(function ($routeProvider) {
@@ -18,3 +19,4 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
+app.constant('FIREBASE_URL', 'fellowshipcrf.firebaseio.com');
