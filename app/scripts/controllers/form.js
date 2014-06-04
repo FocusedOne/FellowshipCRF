@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fellowshipCrfApp')
-  .controller('FormCtrl', function ($scope) {
-  
-  });
+app.controller('FormCtrl', function($scope){
+  $scope.word = 'woo';
+  console.log('FormCtrl loaded');
+});
