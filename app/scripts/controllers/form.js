@@ -14,6 +14,7 @@ app.controller('FormCtrl', function($scope){
     ministryOverseer: '',
     ministryOverseerPhone: '',
 
+
     campusWidePromotionCampus: {},
 
     //bulletin announcement
