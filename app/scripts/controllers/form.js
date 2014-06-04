@@ -1,9 +1,9 @@
 'use strict';
-
 app.controller('FormCtrl', function($scope){
   $scope.forms = {};
 
-  
+  $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
+  $scope.websiteSiteOptions = [{label: 'Little Rock', value: 'Little Rock'}, {label: 'Benton', value: 'Benton'}, {label:'Cabot', value:'Cabot'}, {label: 'Sageworks', value: 'Sageworks'}, {label: 'Missions', value: 'Missions'}, {label: 'FSM', value: 'FSM'}, {label: 'Women', value: 'Women'}];
   $scope.form = {
     //ministry info
     ministryEventName: '',
@@ -14,7 +14,7 @@ app.controller('FormCtrl', function($scope){
     ministryOverseer: '',
     ministryOverseerPhone: '',
 
-    //campusWidePromotion - checkboxes?
+    campusWidePromotionCampus: {},
 
     //bulletin announcement
     bulletinSpotlightCopy: '',
@@ -34,7 +34,7 @@ app.controller('FormCtrl', function($scope){
     connectionCenterDates: '',
 
     //print media
-      //printRequest: '',
+    printRequest: {},
     printProjectInfo: '',
     printLogoDates: '',
     printPostersQuantity: '',
@@ -50,7 +50,7 @@ app.controller('FormCtrl', function($scope){
     printOtherDescription: '',
 
     //website
-      //websiteSite selection?
+    websiteSite: {},
     websiteWebpage: '',
     websiteCopyDates: '',
     websiteCopyText: '',
@@ -59,7 +59,7 @@ app.controller('FormCtrl', function($scope){
     websiteGfxDescription: '',
 
     //social media
-      //social campus selection
+    socialCampus: {},
     socialDates: '',
     socialCopy: '',
 

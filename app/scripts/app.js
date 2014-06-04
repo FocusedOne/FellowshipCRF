@@ -19,4 +19,3 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
-app.constant('FIREBASE_URL', 'fellowshipcrf.firebaseio.com');
