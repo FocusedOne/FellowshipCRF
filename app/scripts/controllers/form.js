@@ -55,7 +55,7 @@ app.controller('FormCtrl', function($scope){
     websiteWebpage: '',
     websiteCopyDates: '',
     websiteCopyText: '',
-      //website gfx type
+    websiteGfxType: {},
     websiteGfxDates: '',
     websiteGfxDescription: '',
 
@@ -65,11 +65,11 @@ app.controller('FormCtrl', function($scope){
     socialCopy: '',
 
     //email blast
-      //email campus selection
+    emailCampus: {},
     emailList: '',
     emailDates: '',
     emailCopy: '',
-      //gfx/vid embed?
+    emailEmbed: ''
   };
   console.log('FormCtrl loaded');
 });

@@ -362,24 +362,24 @@
     <div class="col-xs-1">
       <h4>Graphics:</h4>
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Banner
+          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.banner" ng-true-value="Banner" ng-false-value="">Banner
         </label>
       </div>
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Image
+          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.image" ng-true-value="Image" ng-false-value=""> Image
         </label>
       </div>
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> PDF
+          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.pdf" ng-true-value="PDF" ng-false-value=""> PDF
         </label>
       </div>
     </div>
@@ -427,29 +427,6 @@
         </label>
       </div>
     </div>
-
-
-<!--       <div class="col-xs-1">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Benton
-          </label>
-        </div>
-      </div>
-      <div class="col-xs-1">
-         <div class="checkbox">
-          <label>
-            <input type="checkbox"> Cabot
-          </label>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Little Rock
-          </label>
-        </div>
-      </div> -->
       <div class="col-xs-4">
         <div class="form-group">
           <label for="social-dates">Date(s) Requested</label>
@@ -469,26 +446,27 @@
         <h2>Email Blast</h2>
   <div class="row">
     <div class="col-xs-1"><h4>Campus:</h4></div>
-    <div class="col-xs-1">
+        <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Benton
-        </label>
-      </div>
-    </div>
-    <div class="col-xs-1">
-       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Cabot
+          <input type="checkbox" name="emailCampus" ng-model="emailCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Little Rock
+          <input type="checkbox" name="emailCampus" ng-model="emailCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
         </label>
       </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="emailCampus" ng-model="emailCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
+        </label>
+      </div>
+    </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
@@ -502,16 +480,16 @@
           <input type="text" placeholder="Date(s) Requested" class="form-control" id="email-dates" ng-model="emailDates">
       </div>
     </div>
-  </div>
       <div class="form-group">
         <label for="email-copy">Copy</label>
           <textarea placeholder="Draft text must be provided by the ministry when submitting CRF." class="form-control" id="email-copy" ng-model="emailCopy"></textarea>
       </div>
           <div class="checkbox">
         <label>
-          <input type="checkbox"> Graphics/Video Embed
+          <input type="checkbox" name="emailEmbed" ng-model="emailEmbed" ng-true-value="Has Embed" ng-false-value="No Embed"> Graphics/Video Embed
         </label>
       </div>
+    </div>
 <hr>
 <div class="btn btn-lg btn-primary">Submit</div>
 </form>
