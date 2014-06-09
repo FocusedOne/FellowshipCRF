@@ -5,7 +5,8 @@ var app = angular.module('fellowshipCrfApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'crfControllers'
   ]);
 
 app.config(function ($routeProvider) {
@@ -13,6 +14,10 @@ app.config(function ($routeProvider) {
       .when('/', {
         templateUrl: 'views/fullForm.html',
         controller: 'FormCtrl'
+      })
+      .when('/output', {
+        templateUrl: 'views/formOutput.html',
+        controller: 'displayCRF'
       })
       .otherwise({
         redirectTo: '/'

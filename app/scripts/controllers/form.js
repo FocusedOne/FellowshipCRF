@@ -144,7 +144,6 @@ app.controller('FormCtrl', function($scope, $http){
     var jsonForm = JSON.stringify($scope.form);
     $http({method : 'POST',url: 'https://api.parse.com/1/classes/crf', headers: { 'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: jsonForm})
     .success(function(data, status) {
-        alert('Success');
         $scope.form = {
         //ministry info
         ministryEventName: '',
@@ -215,11 +214,10 @@ app.controller('FormCtrl', function($scope, $http){
       };
     })
     .error(function(data, status) {
-        alert('Fail');
+        alert('Oops! Something went wrong. STATUS: ' + status);
     });
 
   };
-  console.log('FormCtrl loaded');
 
   
 });
