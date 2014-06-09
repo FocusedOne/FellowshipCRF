@@ -142,7 +142,7 @@ app.controller('FormCtrl', function($scope, $http){
 
   $scope.submitCRF = function(){
     var jsonForm = JSON.stringify($scope.form);
-    $http({method : 'POST',url: 'https://api.parse.com/1/classes/crf', headers: { 'X-Parse-Application-Id':'TOO_HOT_FOR_GITHUB', 'X-Parse-REST-API-Key':'TOO_HOT_FOR_GITHUB', 'Content-Type':'application/json'}, data: jsonForm})
+    $http({method : 'POST',url: 'https://api.parse.com/1/classes/crf', headers: { 'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: jsonForm})
     .success(function(data, status) {
         alert('Success');
         $scope.form = {
