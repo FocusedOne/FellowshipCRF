@@ -89,32 +89,32 @@
     <div class="col-xs-3">
       <div class="form-group">
         <label for="ministry-project-contact">Project Contact</label>
-        <input type="text" class="form-control" id="ministry-project-contact" placeholder="Project Contact" ng-model="ministryProjectContact">
+        <input type="text" class="form-control" id="ministry-project-contact" placeholder="Project Contact" ng-model="form.ministryProjectContact">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
         <label for="ministry-contact-phone">Project Contact phone</label>
-        <input type="tel" class="form-control" id="ministry-contact-phone" placeholder="Project Contact's phone" ng-model="ministryProjectContactPhone">
+        <input type="tel" class="form-control" id="ministry-contact-phone" placeholder="Project Contact's phone" ng-model="form.ministryProjectContactPhone">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
         <label for="ministry-overseer">Ministry Overseer</label>
-        <input type="text" class="form-control" id="ministry-overseer" placeholder="Ministry Overseer" ng-model="ministryOverseer">
+        <input type="text" class="form-control" id="ministry-overseer" placeholder="Ministry Overseer" ng-model="form.ministryOverseer">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
         <label for="ministry-overseer-phone">Overseer's phone</label>
-        <input type="tel" class="form-control" id="ministry-overseer-phone" placeholder="Overseer's phone" ng-model="ministryOverseerPhone">
+        <input type="tel" class="form-control" id="ministry-overseer-phone" placeholder="Overseer's phone" ng-model="form.ministryOverseerPhone">
       </div>
     </div>
   </div>  
 
 
 
-<!-- <input type="checkbox" name="favoriteColors" ng-model="formData.favoriteColors.red"> Red -->
+<!-- <input type="checkbox" name="favoriteColors" ng-model="form.formData.favoriteColors.red"> Red -->
 
 
 <hr>
@@ -125,21 +125,21 @@
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="campusWidePromotionCampus" ng-model="campusWidePromotionCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
+          <input type="checkbox" name="campusWidePromotionCampus" ng-model="form.campusWidePromotionCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="campusWidePromotionCampus" ng-model="campusWidePromotionCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
+          <input type="checkbox" name="campusWidePromotionCampus" ng-model="form.campusWidePromotionCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="campusWidePromotionCampus" ng-model="campusWidePromotionCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
+          <input type="checkbox" name="campusWidePromotionCampus" ng-model="form.campusWidePromotionCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
         </label>
       </div>
     </div>
@@ -154,31 +154,31 @@
     <div class="col-xs-4">
       <div class="form-group">
         <label for="bulletin-spotlight-copy">Bulletin Spotlight</label>
-        <textarea class="form-control" id="bulletin-spotlight-copy" placeholder="55 words of description plus date, time, and location" rows="5" ng-model="bulletinSpotlightCopy"></textarea>
+        <textarea class="form-control" id="bulletin-spotlight-copy" placeholder="55 words of description plus date, time, and location" rows="5" ng-model="form.bulletinSpotlightCopy"></textarea>
       </div>
       <div class="form-group">
         <label for="bulletin-spotlight-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-spotlight-dates" ng-model="bulletinSpotlightDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-spotlight-dates" ng-model="form.bulletinSpotlightDates">
       </div>
     </div>
     <div class="col-xs-4" style="border-left: 1px solid #eeeeee; border-right: 1px solid #eeeeee">
       <div class="form-group">      
         <label for="bulletin-coming-soon-copy">Coming Soon</label>
-        <textarea class="form-control" id="bulletin-coming-soon-copy" placeholder="Date, time, location, and 12-15 words describing the event" rows="5" ng-model="BulletinComingSoonCopy"></textarea>
+        <textarea class="form-control" id="bulletin-coming-soon-copy" placeholder="Date, time, location, and 12-15 words describing the event" rows="5" ng-model="form.BulletinComingSoonCopy"></textarea>
       </div>
       <div class="form-group">
         <label for="bulletin-coming-soon-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-coming-soon-dates" ng-model="bulletinComingSoonDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-coming-soon-dates" ng-model="form.bulletinComingSoonDates">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">      
         <label for="bulletin-this-week-copy">This Week</label>
-        <textarea class="form-control" id="bulletin-this-week-copy" placeholder="Date, time, and location only" rows="5" ng-model="bulletinThisWeekCopy"></textarea>
+        <textarea class="form-control" id="bulletin-this-week-copy" placeholder="Date, time, and location only" rows="5" ng-model="form.bulletinThisWeekCopy"></textarea>
       </div>      
       <div class="form-group">
         <label for="bulletin-this-week-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-this-week-dates" ng-model="bulletinThisWeekDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="bulletin-this-week-dates" ng-model="form.bulletinThisWeekDates">
       </div>
     </div>
   </div>
@@ -191,13 +191,13 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label for="tmaf-copy">Announcement Copy</label>
-        <textarea class="form-control" id="tmaf-copy" placeholder="Please keep all announcements at 50 words or less." rows="3" ng-model="tmafCopy"></textarea>
+        <textarea class="form-control" id="tmaf-copy" placeholder="Please keep all announcements at 50 words or less." rows="3" ng-model="form.tmafCopy"></textarea>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="form-group">
         <label for "tmaf-month">Month Requested</label>
-          <input type="text" placeholder="Month" class="form-control" id="tmaf-month" ng-model="tmafMonth">
+          <input type="text" placeholder="Month" class="form-control" id="tmaf-month" ng-model="form.tmafMonth">
       </div>
     </div>
   </div>
@@ -210,19 +210,19 @@
     <div class="col-xs-4">
       <div class="form-group">
         <label for "connection-center-person">Person Staffing Area</label>
-          <input type="text" placeholder="Person Staffing Area" class="form-control" id="connection-center-person" ng-model="connectionCenterPerson">
+          <input type="text" placeholder="Person Staffing Area" class="form-control" id="connection-center-person" ng-model="form.connectionCenterPerson">
       </div>
     </div>
     <div class="col-xs-5">
       <div class="form-group">
         <label for "connection-center-items">Items Distributed</label>
-          <input type="text" placeholder="Items Distributed" class="form-control" id="connection-center-items" ng-model="connectionCenterItems">
+          <input type="text" placeholder="Items Distributed" class="form-control" id="connection-center-items" ng-model="form.connectionCenterItems">
       </div>
     </div>
     <div class="col-xs-3">
       <div class="form-group">
         <label for "connection-center-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="connection-center-dates" ng-model="connectionCenterDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="connection-center-dates" ng-model="form.connectionCenterDates">
       </div>
     </div>
   </div>
@@ -236,11 +236,11 @@
       <div class="form-group">
       <label for="print-request-type">Kind of Request</label>
         <select class="form-control" id=
-        "print-request-type" ng-model="printRequest" ng-options="opt as opt.label for opt in printRequestOptions"></select>
+        "print-request-type" ng-model="form.printRequest" ng-options="opt as opt.label for opt in printRequestOptions"></select>
       </div>
       <div class="form-group">
         <label for="print-project-info">Project Information</label>
-          <textarea placeholder="For external advertising needs, please contact the Communications Director." class="form-control" id="print-project-info" rows="30" ng-model="printProjectInfo"></textarea>
+          <textarea placeholder="For external advertising needs, please contact the Communications Director." class="form-control" id="print-project-info" rows="30" ng-model="form.printProjectInfo"></textarea>
       </div>
     </div>
     <div class="col-xs-6">
@@ -249,7 +249,7 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-logo-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-logo-dates" ng-model="printLogoDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-logo-dates" ng-model="form.printLogoDates">
           </div>
         </div>
       </div>
@@ -259,13 +259,13 @@
         <div class="col-xs-6">     
           <div class="form-group">
             <label for="print-posters-quantity">Quantity</label>
-              <input type="number" placeholder="Quantity" class="form-control" id="print-posters-quantity" ng-model="printPostersQuantity">
+              <input type="number" placeholder="Quantity" class="form-control" id="print-posters-quantity" ng-model="form.printPostersQuantity">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-posters-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-posters-dates" ng-model="printPostersDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-posters-dates" ng-model="form.printPostersDates">
           </div>
         </div>
       </div>
@@ -274,13 +274,13 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-flyers-quantity">Quantity</label>
-              <input type="number" placeholder="Quantity" class="form-control" id="print-flyers-quantity" ng-model="printFlyersQuantity">
+              <input type="number" placeholder="Quantity" class="form-control" id="print-flyers-quantity" ng-model="form.printFlyersQuantity">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-flyers-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-flyers-dates" ng-model="printFlyersDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-flyers-dates" ng-model="form.printFlyersDates">
           </div>
         </div>
       </div>
@@ -289,13 +289,13 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-brochures-quantity">Quantity</label>
-              <input type="number" placeholder="Quantity" class="form-control" id="print-brochures-quantity" ng-model="printBrochuresQuantity">
+              <input type="number" placeholder="Quantity" class="form-control" id="print-brochures-quantity" ng-model="form.printBrochuresQuantity">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-brochures-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-brochures-dates" ng-model="printBrochuresDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-brochures-dates" ng-model="form.printBrochuresDates">
           </div>
         </div>
       </div>
@@ -304,13 +304,13 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-notebooks-quantity">Quantity</label>
-              <input type="number" placeholder="Quantity" class="form-control" id="print-notebooks-quantity" ng-model="printNotebooksQuantity">
+              <input type="number" placeholder="Quantity" class="form-control" id="print-notebooks-quantity" ng-model="form.printNotebooksQuantity">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-notebooks-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-notebooks-dates" ng-model="printNotebooksDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-notebooks-dates" ng-model="form.printNotebooksDates">
           </div>
         </div>
       </div>
@@ -319,13 +319,13 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-other-quantity">Quantity</label>
-              <input type="number" placeholder="Quantity" class="form-control" id="print-other-quantity" ng-model="printOtherQuantity">
+              <input type="number" placeholder="Quantity" class="form-control" id="print-other-quantity" ng-model="form.printOtherQuantity">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="print-other-dates">Date(s) Requested</label>
-              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-other-dates" ng-model="printOtherDates">
+              <input type="text" placeholder="Date(s) Requested" class="form-control" id="print-other-dates" ng-model="form.printOtherDates">
           </div>
         </div>
       </div>
@@ -333,7 +333,7 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="print-other-description">Description</label>
-              <textarea placeholder="Description" class="form-control" id="print-other-description" ng-model="printOtherDescription"></textarea>
+              <textarea placeholder="Description" class="form-control" id="print-other-description" ng-model="form.printOtherDescription"></textarea>
           </div>
         </div>
       </div>
@@ -349,23 +349,23 @@
     <div class="form-group">
       <label for="websiteSite">Site</label>
         <select class="form-control" id=
-        "websiteSite" ng-model="websiteSite" ng-options="opt as opt.label for opt in websiteSiteOptions"></select>
+        "websiteSite" ng-model="form.websiteSite" ng-options="opt as opt.label for opt in websiteSiteOptions"></select>
     </div>
   </div>
     <div class="col-xs-6">
       <div class="form-group">
         <label for="website-webpage">Web Page</label>
-          <input type="text" placeholder="Web Page" class="form-control" id="website-webpage" ng-model="websiteWebpage">
+          <input type="text" placeholder="Web Page" class="form-control" id="website-webpage" ng-model="form.websiteWebpage">
       </div>
       <div class="form-group">
         <label for="website-copy-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="website-copy-dates" ng-model="websiteCopyDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="website-copy-dates" ng-model="form.websiteCopyDates">
       </div>
     </div>
       <div class="col-xs-12">
         <div class="form-group">
           <label for="website-copy-text">Text</label>
-          <textarea placeholder="Text" class="form-control" id="website-copy-text" ng-model="websiteCopyText"></textarea>
+          <textarea placeholder="Text" class="form-control" id="website-copy-text" ng-model="form.websiteCopyText"></textarea>
         </div>
       </div>
   </div>
@@ -376,28 +376,28 @@
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.banner" ng-true-value="Banner" ng-false-value="">Banner
+          <input type="checkbox" name="websiteGfxType" ng-model="form.websiteGfxType.banner" ng-true-value="Banner" ng-false-value="">Banner
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.image" ng-true-value="Image" ng-false-value=""> Image
+          <input type="checkbox" name="websiteGfxType" ng-model="form.websiteGfxType.image" ng-true-value="Image" ng-false-value=""> Image
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="websiteGfxType" ng-model="websiteGfxType.pdf" ng-true-value="PDF" ng-false-value=""> PDF
+          <input type="checkbox" name="websiteGfxType" ng-model="form.websiteGfxType.pdf" ng-true-value="PDF" ng-false-value=""> PDF
         </label>
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label for="website-gfx-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="website-gfx-dates" ng-model="websiteGfxDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="website-gfx-dates" ng-model="form.websiteGfxDates">
       </div>    
     </div>
   </div>
@@ -405,7 +405,7 @@
     <div class="col-xs-12">
       <div class="form-group">
         <label for="website-gfx-description">Description</label>
-          <textarea placeholder="Description" class="form-control" id="website-gfx-description" ng-model="websiteGfxDescription"></textarea>
+          <textarea placeholder="Description" class="form-control" id="website-gfx-description" ng-model="form.websiteGfxDescription"></textarea>
       </div>
     </div>
   </div>
@@ -422,28 +422,28 @@
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="socialCampus" ng-model="socialCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
+          <input type="checkbox" name="socialCampus" ng-model="form.socialCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="socialCampus" ng-model="socialCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
+          <input type="checkbox" name="socialCampus" ng-model="form.socialCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="socialCampus" ng-model="socialCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
+          <input type="checkbox" name="socialCampus" ng-model="form.socialCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
         </label>
       </div>
     </div>
       <div class="col-xs-4">
         <div class="form-group">
           <label for="social-dates">Date(s) Requested</label>
-            <input type="text" placeholder="Date(s) Requested" class="form-control" id="social-dates" ng-model="socialDates">
+            <input type="text" placeholder="Date(s) Requested" class="form-control" id="social-dates" ng-model="form.socialDates">
         </div>        
       </div>
   </div>
@@ -451,7 +451,7 @@
       <div class="col-xs-12">
         <div class="form-group">
           <label for="social-copy">Copy</label>
-            <textarea placeholder="Draft text must be provided by the ministry when submitting CRF." class="form-control" id="social-copy" ng-model="socialCopy"></textarea>
+            <textarea placeholder="Draft text must be provided by the ministry when submitting CRF." class="form-control" id="social-copy" ng-model="form.socialCopy"></textarea>
         </div>
       </div>
     </div>
@@ -465,21 +465,21 @@
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="emailCampus" ng-model="emailCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
+          <input type="checkbox" name="emailCampus" ng-model="form.emailCampus.LR" ng-true-value="Little Rock" ng-false-value=""> Little Rock
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="emailCampus" ng-model="emailCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
+          <input type="checkbox" name="emailCampus" ng-model="form.emailCampus.Benton" ng-true-value="Benton" ng-false-value=""> Benton
         </label>
       </div>
     </div>
     <div class="col-xs-2">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="emailCampus" ng-model="emailCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
+          <input type="checkbox" name="emailCampus" ng-model="form.emailCampus.Cabot" ng-true-value="Cabot" ng-false-value=""> Cabot
         </label>
       </div>
     </div>
@@ -488,13 +488,13 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label for="email-list">Distribution List</label>
-          <input type="text" placeholder="Distribution List" class="form-control" id="email-list" ng-model="emailList">
+          <input type="text" placeholder="Distribution List" class="form-control" id="email-list" ng-model="form.emailList">
       </div>      
     </div>
     <div class="col-xs-6">
       <div class="form-group">
         <label for="email-dates">Date(s) Requested</label>
-          <input type="text" placeholder="Date(s) Requested" class="form-control" id="email-dates" ng-model="emailDates">
+          <input type="text" placeholder="Date(s) Requested" class="form-control" id="email-dates" ng-model="form.emailDates">
       </div>
     </div>
   </div>
@@ -502,17 +502,17 @@
     <div class="col-xs-12">
       <div class="form-group">
         <label for="email-copy">Copy</label>
-          <textarea placeholder="Draft text must be provided by the ministry when submitting CRF." class="form-control" id="email-copy" ng-model="emailCopy"></textarea>
+          <textarea placeholder="Draft text must be provided by the ministry when submitting CRF." class="form-control" id="email-copy" ng-model="form.emailCopy"></textarea>
       </div>
         <div class="checkbox">
         <label>
-          <input type="checkbox" name="emailEmbed" ng-model="emailEmbed" ng-true-value="Has Embed" ng-false-value="No Embed"> Graphics/Video Embed
+          <input type="checkbox" name="emailEmbed" ng-model="form.emailEmbed" ng-true-value="Has Embed" ng-false-value="No Embed"> Graphics/Video Embed
         </label>
       </div>
     </div>
   </div>
 <hr>
 </div>
-<div class="btn btn-lg btn-primary">Submit</div>
+<div class="btn btn-lg btn-primary" ng-click="submitCRF()">Submit</div>
 </form>
 </div>

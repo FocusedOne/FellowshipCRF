@@ -5,8 +5,7 @@ var app = angular.module('fellowshipCrfApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute',
-    'firebase'
+    'ngRoute'
   ]);
 
 app.config(function ($routeProvider) {
