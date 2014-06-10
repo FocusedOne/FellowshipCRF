@@ -1,8 +1,29 @@
-<div class="container">
+<div style="margin-left: 10%; margin-right: 10%">
   <h1>Here is your completed form!</h1>
   <div class="row">
+  <h3>Ministry Info</h3>
     <div class="col-md-6">
       <strong>Event/Project Name:</strong> {{crf.ministryEventName}}
     </div>
     <div class="col-md-6"><strong>Ministry:</strong> {{crf.ministryChoice}}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><strong>Project Contact:</strong> {{crf.ministryProjectContact}}</div>
+    <div class="col-md-3"><strong>Contact phone:</strong> {{crf.ministryProjectContactPhone}}</div>
+    <div class="col-md-3"><strong>Overseer: </strong>{{ministryOverseer}}</div>
+    <div class="col-md-3"><strong>Overseer phone: </strong>{{ministryOverseerPhone}}</div>
+  </div>
+  <hr>¡
+  <div class="row">
+  <h3>Bulletin</h3>
+    <div class="col-md-4"><strong>Spotlight copy:</strong>{{crf.bulletinSpotlightCopy}}<br>
+    <strong>Dates:</strong>{{crf.bulletinSpotlightDates}}
+    </div>
+    <div class="col-md-4"><strong>Coming Soon copy:</strong>{{crf.bulletinComingSoonCopy}}<br>
+    <strong>Dates:</strong> {{crf.bulletinComingSoonDates}}
+    </div>
+    <div class="col-md-4"><strong>This Week copy:</strong>{{crf.bulletinThisWeekCopy}}<br>
+    <strong>Dates: </strong>{{crf.bulletinThisWeekDates}}
+    </div>
+  </div>
 </div>

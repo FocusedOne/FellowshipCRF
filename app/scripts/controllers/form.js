@@ -1,5 +1,5 @@
 'use strict';
-app.controller('FormCtrl', function($scope, $http){
+app.controller('FormCtrl', function($scope, $http, $location){
 
   $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
   $scope.websiteSiteOptions = [{label: 'Little Rock', value: 'Little Rock'}, {label: 'Benton', value: 'Benton'}, {label:'Cabot', value:'Cabot'}, {label: 'Sageworks', value: 'Sageworks'}, {label: 'Missions', value: 'Missions'}, {label: 'FSM', value: 'FSM'}, {label: 'Women', value: 'Women'}];
@@ -141,77 +141,85 @@ app.controller('FormCtrl', function($scope, $http){
   // };
 
   $scope.submitCRF = function(){
+
     var jsonForm = JSON.stringify($scope.form);
-    $http({method : 'POST',url: 'https://api.parse.com/1/classes/crf', headers: { 'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: jsonForm})
-    .success(function(data, status) {
-        $scope.form = {
-        //ministry info
-        ministryEventName: '',
-        ministryChoice: '',
-        ministryAccount: '',
-        ministryProjectContact: '',
-        ministryProjectContactPhone: '',
-        ministryOverseer: '',
-        ministryOverseerPhone: '',
+    $http({method: 'POST', url: 'https://api.parse.com/1/classes/crf', headers: { 'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: jsonForm})
+    .success(function(data, status, headers, response) {
+        
+        console.log(response.data);
+        console.log("--------");
+        console.log(data.objectId);
+
+        $location.path('/output');
+
+      //   $scope.form = {
+      //   //ministry info
+      //   ministryEventName: '',
+      //   ministryChoice: '',
+      //   ministryAccount: '',
+      //   ministryProjectContact: '',
+      //   ministryProjectContactPhone: '',
+      //   ministryOverseer: '',
+      //   ministryOverseerPhone: '',
 
 
-        campusWidePromotionCampus: {},
+      //   campusWidePromotionCampus: {},
 
-        //bulletin announcement
-        bulletinSpotlightCopy: '',
-        bulletinSpotlightDates: '',
-        bulletinComingSoonCopy: '',
-        bulletinComingSoonDates: '',
-        bulletinThisWeekCopy: '',
-        bulletinThisWeekDates: '',
+      //   //bulletin announcement
+      //   bulletinSpotlightCopy: '',
+      //   bulletinSpotlightDates: '',
+      //   bulletinComingSoonCopy: '',
+      //   bulletinComingSoonDates: '',
+      //   bulletinThisWeekCopy: '',
+      //   bulletinThisWeekDates: '',
 
-        //tmaf announcement
-        tmafCopy: '',
-        tmafMonth: '',
+      //   //tmaf announcement
+      //   tmafCopy: '',
+      //   tmafMonth: '',
 
-        //connection center booth
-        connectionCenterPerson: '',
-        connectionCenterItems: '',
-        connectionCenterDates: '',
+      //   //connection center booth
+      //   connectionCenterPerson: '',
+      //   connectionCenterItems: '',
+      //   connectionCenterDates: '',
 
-        //print media
-        printRequest: {},
-        printProjectInfo: '',
-        printLogoDates: '',
-        printPostersQuantity: '',
-        printPostersDates: '',
-        printFlyersQuantity: '',
-        printFlyersDates: '',
-        printBrochuresQuantity: '',
-        printBrochuresDates: '',
-        printNotebooksQuantity: '',
-        printNotebooksDates: '',
-        printOtherQuantity: '',
-        printOtherDates: '',
-        printOtherDescription: '',
+      //   //print media
+      //   printRequest: {},
+      //   printProjectInfo: '',
+      //   printLogoDates: '',
+      //   printPostersQuantity: '',
+      //   printPostersDates: '',
+      //   printFlyersQuantity: '',
+      //   printFlyersDates: '',
+      //   printBrochuresQuantity: '',
+      //   printBrochuresDates: '',
+      //   printNotebooksQuantity: '',
+      //   printNotebooksDates: '',
+      //   printOtherQuantity: '',
+      //   printOtherDates: '',
+      //   printOtherDescription: '',
 
-        //website
-        websiteSite: {},
-        websiteWebpage: '',
-        websiteCopyDates: '',
-        websiteCopyText: '',
-        websiteGfxType: {},
-        websiteGfxDates: '',
-        websiteGfxDescription: '',
+      //   //website
+      //   websiteSite: {},
+      //   websiteWebpage: '',
+      //   websiteCopyDates: '',
+      //   websiteCopyText: '',
+      //   websiteGfxType: {},
+      //   websiteGfxDates: '',
+      //   websiteGfxDescription: '',
 
-        //social media
-        socialCampus: {},
-        socialDates: '',
-        socialCopy: '',
+      //   //social media
+      //   socialCampus: {},
+      //   socialDates: '',
+      //   socialCopy: '',
 
-        //email blast
-        emailCampus: {},
-        emailList: '',
-        emailDates: '',
-        emailCopy: '',
-        emailEmbed: ''
+      //   //email blast
+      //   emailCampus: {},
+      //   emailList: '',
+      //   emailDates: '',
+      //   emailCopy: '',
+      //   emailEmbed: ''
 
-      };
+      // };
     })
     .error(function(data, status) {
         alert('Oops! Something went wrong. STATUS: ' + status);
