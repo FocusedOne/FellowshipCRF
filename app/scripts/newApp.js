@@ -112,7 +112,6 @@ app.controller('outputCtrl', function($scope, crfData){
   crfData.open().success(function(data){
     $scope.crf = data;
   });
-  console.log($scope.crf);
 });
 
 app.controller('listCtrl', function($scope, crfData){
@@ -137,20 +136,7 @@ app.factory('crfData', function($http, $location){
       });
     },
     open: function(){
-      console.log('crfData.open hit for object ' + this.currentObject);
-      var that = this;
-      var objectUrl = this.apiPath + '/' + this.currentObject;
-      return $http({method: 'GET', url: objectUrl, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
-
-      // console.log('objectUrl: ' + objectUrl);
-      // $http({method: 'GET', url: objectUrl, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}})
-      // .success(function(data){
-      //   // console.log(data);
-      //   return data;
-      // })
-      // .error(function(){
-      //   console.log('Could not load CRF data.');
-      // });
+      return $http({method: 'GET', url: this.apiPath + '/' + this.currentObject, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     },
     list: function(){
       console.log('crfData.list hit');
