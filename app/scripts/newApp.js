@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
     });
 });
 
-app.controller('inputCtrl', function($scope, $http, $location){
+app.controller('inputCtrl', function($scope, $http, $location, crfData){
 
     $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
     $scope.websiteSiteOptions = [{label: 'Little Rock', value: 'Little Rock'}, {label: 'Benton', value: 'Benton'}, {label:'Cabot', value:'Cabot'}, {label: 'Sageworks', value: 'Sageworks'}, {label: 'Missions', value: 'Missions'}, {label: 'FSM', value: 'FSM'}, {label: 'Women', value: 'Women'}];
@@ -101,8 +101,8 @@ app.controller('inputCtrl', function($scope, $http, $location){
 
     $scope.submitCRF = function(){
       console.log('submitCRF hit');
-      // crfService.save(JSON.stringify($scope.form));
-      // $location.path('/output/');
+      $scope.form = JSON.stringify($scope.form);
+      crfData.save($scope.form);
     };
 
 });
@@ -117,8 +117,19 @@ app.controller('listCtrl', function($scope){
 
 app.factory('crfData', function($http){
   return {
-    save: function(){
+    apiPath: 'https://api.parse.com/1/classes/crf',
+    currentObject: '',
+    save: function(formData){
       console.log('crfData.save hit');
+      console.log('formData: ' + formData);
+      var that = this;
+      $http({method: 'POST', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: formData})
+      .success(function(data){
+        that.currentObject = data.objectId;
+      })
+      .error(function(){
+        console.log('Well fuck.');
+      });
     },
     open: function(){
       console.log('crfData.open hit');
