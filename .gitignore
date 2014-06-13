@@ -3,4 +3,5 @@ dist
 .tmp
 .sass-cache
 app/bower_components
-scripts/keys.jsapp/scripts/keys.js
+scripts/keys.js
+app/scripts/keys.js
