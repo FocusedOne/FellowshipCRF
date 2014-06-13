@@ -14,13 +14,9 @@ app.config(function($routeProvider) {
       templateUrl: 'views/fullForm.html',
       controller: 'inputCtrl'
     })
-    .when('/output', {
-      templateUrl: 'views/formOutput.html',
-      controller: 'outputCtrl'
-    })
     .when('/output/:id', {
       templateUrl: 'views/formOutput.html',
-      controller: 'linkedOutputCtrl'
+      controller: 'outputCtrl'
     })
     .when('/all', {
       templateUrl: 'views/formList.html',
@@ -31,7 +27,7 @@ app.config(function($routeProvider) {
     });
 });
 
-app.controller('inputCtrl', function($scope, $http, crfData){
+app.controller('inputCtrl', function($scope, $http, $location, crfData){
 
     $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
     $scope.websiteSiteOptions = [{label: 'Little Rock', value: 'Little Rock'}, {label: 'Benton', value: 'Benton'}, {label:'Cabot', value:'Cabot'}, {label: 'Sageworks', value: 'Sageworks'}, {label: 'Missions', value: 'Missions'}, {label: 'FSM', value: 'FSM'}, {label: 'Women', value: 'Women'}];
@@ -104,21 +100,17 @@ app.controller('inputCtrl', function($scope, $http, crfData){
     };
 
     $scope.submitCRF = function(){
-      crfData.save(JSON.stringify($scope.form));
+      crfData.save(JSON.stringify($scope.form)).success(function(data){
+        $location.path('/output/' + data.objectId);
+      });
     };
 
 });
 
-app.controller('outputCtrl', function($scope, crfData){
-  $scope.crf = '';
-  crfData.open().success(function(data){
-    $scope.crf = data;
-  });
-});
 
-app.controller('linkedOutputCtrl', function($scope, $routeParams, crfData){
+app.controller('outputCtrl', function($scope, $routeParams, crfData){
   var objectId = $routeParams.id;
-  crfData.openLinked(objectId).success(function(data){
+  crfData.open(objectId).success(function(data){
     $scope.crf = data;
   });
 });
@@ -135,22 +127,13 @@ app.factory('crfData', function($http, $location){
     apiPath: 'https://api.parse.com/1/classes/crf',
     currentObject: '',
     save: function(formData){
-      var that = this;
-      $http({method: 'POST', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: formData})
-      .success(function(data){
-        that.currentObject = data.objectId;
-        // console.log(that.currentObject);
-        $location.path('/output');
-        // return data.objectId;
-      })
+      //var that = this;
+      return $http({method: 'POST', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: formData})
       .error(function(){
         console.log('Oops! Something bad happened.');
       });
     },
-    open: function(){
-      return $http({method: 'GET', url: this.apiPath + '/' + this.currentObject, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
-    },
-    openLinked: function(objectId){
+    open: function(objectId){
       return $http({method: 'GET', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     },
     list: function(){
