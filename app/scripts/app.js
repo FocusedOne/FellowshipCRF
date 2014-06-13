@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
       templateUrl: 'views/formOutput.html',
       controller: 'outputCtrl'
     })
+    .when('/output/:id', {
+      templateUrl: 'views/formOutput.html',
+      controller: 'linkedOutputCtrl'
+    })
     .when('/all', {
       templateUrl: 'views/formList.html',
       controller: 'listCtrl'
@@ -114,14 +118,19 @@ app.controller('outputCtrl', function($scope, crfData){
   });
 });
 
+app.controller('linkedOutputCtrl', function($scope, $routeParams, crfData){
+  var objectId = $routeParams.id;
+  console.log(objectId);
+  crfData.openLinked(objectId).success(function(data){
+    $scope.crf = data;
+  });
+});
+
 app.controller('listCtrl', function($scope, crfData){
   console.log('listCtrl hit');
   crfData.list().success(function(data){
     $scope.crfList = data.results;
   });
-  $scope.openCrf = function(objectId){
-    return crfData.openLink(objectId);
-  };
 });
 
 app.factory('crfData', function($http, $location){
@@ -144,12 +153,12 @@ app.factory('crfData', function($http, $location){
     open: function(){
       return $http({method: 'GET', url: this.apiPath + '/' + this.currentObject, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     },
+    openLinked: function(objectId){
+      return $http({method: 'GET', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
+    },
     list: function(){
       console.log('crfData.list hit');
       return $http({method: 'GET', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
-    },
-    openLink: function(objectId){
-      return $http({method: 'GET', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     }
   };
 });
