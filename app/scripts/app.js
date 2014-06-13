@@ -116,6 +116,12 @@ app.controller('outputCtrl', function($scope, crfData){
 
 app.controller('listCtrl', function($scope, crfData){
   console.log('listCtrl hit');
+  crfData.list().success(function(data){
+    $scope.crfList = data.results;
+  });
+  $scope.openCrf = function(objectId){
+    return crfData.openLink(objectId);
+  };
 });
 
 app.factory('crfData', function($http, $location){
@@ -140,6 +146,10 @@ app.factory('crfData', function($http, $location){
     },
     list: function(){
       console.log('crfData.list hit');
+      return $http({method: 'GET', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
+    },
+    openLink: function(objectId){
+      return $http({method: 'GET', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     }
   };
 });
