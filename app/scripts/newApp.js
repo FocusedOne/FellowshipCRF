@@ -27,7 +27,6 @@ app.config(function($routeProvider) {
     });
 });
 
-
 app.controller('inputCtrl', function($scope, $http, $location){
 
     $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
@@ -114,4 +113,18 @@ app.controller('outputCtrl', function($scope){
 
 app.controller('listCtrl', function($scope){
   console.log('listCtrl hit');
+});
+
+app.factory('crfData', function($http){
+  return {
+    save: function(){
+      console.log('crfData.save hit');
+    },
+    open: function(){
+      console.log('crfData.open hit');
+    },
+    list: function(){
+      console.log('crfData.list hit');
+    }
+  };
 });
