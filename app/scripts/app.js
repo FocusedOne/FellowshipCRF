@@ -104,14 +104,12 @@ app.controller('inputCtrl', function($scope, $http, crfData){
     };
 
     $scope.submitCRF = function(){
-      console.log('submitCRF hit');
       crfData.save(JSON.stringify($scope.form));
     };
 
 });
 
 app.controller('outputCtrl', function($scope, crfData){
-  console.log('outputCtrl hit');
   $scope.crf = '';
   crfData.open().success(function(data){
     $scope.crf = data;
@@ -120,7 +118,6 @@ app.controller('outputCtrl', function($scope, crfData){
 
 app.controller('linkedOutputCtrl', function($scope, $routeParams, crfData){
   var objectId = $routeParams.id;
-  console.log(objectId);
   crfData.openLinked(objectId).success(function(data){
     $scope.crf = data;
   });
