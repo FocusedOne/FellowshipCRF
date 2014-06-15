@@ -26,8 +26,12 @@ app.factory('Users', function($http){
           'X-Parse-Application-Id': PARSE_APP_ID,
           'X-Parse-REST-API-Key': PARSE_REST_KEY,
           'Content-Type':'application/json'
-          }
-        });
+        },
+        params:{
+          'username': user.username,
+          'password': user.password
+        }
+      });
     }
   };
 });

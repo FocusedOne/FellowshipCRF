@@ -12,7 +12,10 @@ app.controller('loginCtrl', function($scope, Users){
     Users.create($scope.user);
   };
   $scope.loginUser = function(){
-    // console.log('logging in user ' + username);
+    Users.login($scope.user)
+    .success(function(data){
+      console.log(data.username + ' logged in! sesh id is ' + data.sessionToken);
+    });
   };
 
 });
