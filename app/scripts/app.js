@@ -120,6 +120,11 @@ app.controller('listCtrl', function($scope, crfData){
   crfData.list().success(function(data){
     $scope.crfList = data.results;
   });
+
+  $scope.deleteCRF = function(objectId){
+    console.log('BALEETED');
+    return crfData.delete(objectId);
+  };
 });
 
 app.factory('crfData', function($http, $location){
@@ -133,12 +138,18 @@ app.factory('crfData', function($http, $location){
         console.log('Oops! Something bad happened.');
       });
     },
+
     open: function(objectId){
       return $http({method: 'GET', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     },
+
     list: function(){
       console.log('crfData.list hit');
       return $http({method: 'GET', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
-    }
+    },
+
+    delete: function(objectId){
+      console.log('crfData.delete hit');
+      return $http({method: 'DELETE', url: this.apiPath + '/' + objectId, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});    }
   };
 });
