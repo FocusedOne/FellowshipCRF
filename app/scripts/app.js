@@ -22,82 +22,96 @@ app.config(function($routeProvider) {
       templateUrl: 'views/formList.html',
       controller: 'listCtrl'
     })
+    .when('/edit/:id', {
+      templateUrl: 'views/fullForm.html',
+      controller: 'inputCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
 });
 
-app.controller('inputCtrl', function($scope, $http, $location, crfData){
+app.controller('inputCtrl', function($scope, $http, $location, $routeParams, crfData){
 
     $scope.printRequestOptions = [{label: 'Quote Request', value: 'Quote Request'}, {label: 'New Project Request', value: 'New Project Request'}, {label: 'Reprint with no changes - provide sample.', value:'Reprint with no changes - provide sample.'}, {label: 'Changes to existing document - provide edited copy.', value: 'Changes to existing document - provide edited copy.'}];
     $scope.websiteSiteOptions = [{label: 'Little Rock', value: 'Little Rock'}, {label: 'Benton', value: 'Benton'}, {label:'Cabot', value:'Cabot'}, {label: 'Sageworks', value: 'Sageworks'}, {label: 'Missions', value: 'Missions'}, {label: 'FSM', value: 'FSM'}, {label: 'Women', value: 'Women'}];
-    $scope.form = {
-      //ministry info
-      ministryEventName: '',
-      ministryChoice: '',
-      ministryAccount: '',
-      ministryProjectContact: '',
-      ministryProjectContactPhone: '',
-      ministryOverseer: '',
-      ministryOverseerPhone: '',
+
+    if($routeParams.id){
+        crfData.open($routeParams.id).success(function(data){
+        $scope.form = data;
+      });
+    }
+    else{
+      $scope.form = {
+        //ministry info
+        ministryEventName: '',
+        ministryChoice: '',
+        ministryAccount: '',
+        ministryProjectContact: '',
+        ministryProjectContactPhone: '',
+        ministryOverseer: '',
+        ministryOverseerPhone: '',
 
 
-      campusWidePromotionCampus: {},
+        campusWidePromotionCampus: {},
 
-      //bulletin announcement
-      bulletinSpotlightCopy: '',
-      bulletinSpotlightDates: '',
-      bulletinComingSoonCopy: '',
-      bulletinComingSoonDates: '',
-      bulletinThisWeekCopy: '',
-      bulletinThisWeekDates: '',
+        //bulletin announcement
+        bulletinSpotlightCopy: '',
+        bulletinSpotlightDates: '',
+        bulletinComingSoonCopy: '',
+        bulletinComingSoonDates: '',
+        bulletinThisWeekCopy: '',
+        bulletinThisWeekDates: '',
 
-      //tmaf announcement
-      tmafCopy: '',
-      tmafMonth: '',
+        //tmaf announcement
+        tmafCopy: '',
+        tmafMonth: '',
 
-      //connection center booth
-      connectionCenterPerson: '',
-      connectionCenterItems: '',
-      connectionCenterDates: '',
+        //connection center booth
+        connectionCenterPerson: '',
+        connectionCenterItems: '',
+        connectionCenterDates: '',
 
-      //print media
-      printRequest: {},
-      printProjectInfo: '',
-      printLogoDates: '',
-      printPostersQuantity: '',
-      printPostersDates: '',
-      printFlyersQuantity: '',
-      printFlyersDates: '',
-      printBrochuresQuantity: '',
-      printBrochuresDates: '',
-      printNotebooksQuantity: '',
-      printNotebooksDates: '',
-      printOtherQuantity: '',
-      printOtherDates: '',
-      printOtherDescription: '',
+        //print media
+        printRequest: {},
+        printProjectInfo: '',
+        printLogoDates: '',
+        printPostersQuantity: '',
+        printPostersDates: '',
+        printFlyersQuantity: '',
+        printFlyersDates: '',
+        printBrochuresQuantity: '',
+        printBrochuresDates: '',
+        printNotebooksQuantity: '',
+        printNotebooksDates: '',
+        printOtherQuantity: '',
+        printOtherDates: '',
+        printOtherDescription: '',
 
-      //website
-      websiteSite: {},
-      websiteWebpage: '',
-      websiteCopyDates: '',
-      websiteCopyText: '',
-      websiteGfxType: {},
-      websiteGfxDates: '',
-      websiteGfxDescription: '',
+        //website
+        websiteSite: {},
+        websiteWebpage: '',
+        websiteCopyDates: '',
+        websiteCopyText: '',
+        websiteGfxType: {},
+        websiteGfxDates: '',
+        websiteGfxDescription: '',
 
-      //social media
-      socialCampus: {},
-      socialDates: '',
-      socialCopy: '',
+        //social media
+        socialCampus: {},
+        socialDates: '',
+        socialCopy: '',
 
-      //email blast
-      emailCampus: {},
-      emailList: '',
-      emailDates: '',
-      emailCopy: '',
-      emailEmbed: ''
-    };
+        //email blast
+        emailCampus: {},
+        emailList: '',
+        emailDates: '',
+        emailCopy: '',
+        emailEmbed: ''
+      };
+    }
+
+
 
     $scope.submitCRF = function(){
       crfData.save(JSON.stringify($scope.form)).success(function(data){
@@ -116,13 +130,11 @@ app.controller('outputCtrl', function($scope, $routeParams, crfData){
 });
 
 app.controller('listCtrl', function($scope, crfData){
-  console.log('listCtrl hit');
   crfData.list().success(function(data){
     $scope.crfList = data.results;
   });
 
   $scope.deleteCRF = function(objectId){
-    console.log('BALEETED');
     return crfData.delete(objectId);
   };
 });
@@ -132,7 +144,6 @@ app.factory('crfData', function($http, $location){
     apiPath: 'https://api.parse.com/1/classes/crf',
     currentObject: '',
     save: function(formData){
-      //var that = this;
       return $http({method: 'POST', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}, data: formData})
       .error(function(){
         console.log('Oops! Something bad happened.');
@@ -144,9 +155,10 @@ app.factory('crfData', function($http, $location){
     },
 
     list: function(){
-      console.log('crfData.list hit');
       return $http({method: 'GET', url: this.apiPath, headers: {'X-Parse-Application-Id': PARSE_APP_ID, 'X-Parse-REST-API-Key': PARSE_REST_KEY, 'Content-Type':'application/json'}});
     },
+
+    edit: function(){},
 
     delete: function(objectId){
       console.log('crfData.delete hit');

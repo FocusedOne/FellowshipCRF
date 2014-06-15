@@ -1,5 +1,6 @@
 <div style="margin-left: 10%; margin-right: 10%">
   <h1>Here is your completed form!</h1>
+  <a href="#/edit/{{crf.objectId}}"><button class="btn btn-md btn-primary">Edit</button></a>
   <div class="row">
   <h3>Ministry Info</h3>
     <div class="col-md-6">
@@ -16,13 +17,13 @@
   <hr>
   <div class="row">
   <h3>Bulletin</h3>
-    <div class="col-md-4"><strong>Spotlight copy:</strong>{{crf.bulletinSpotlightCopy}}<br>
+    <div class="col-md-4"><strong>Spotlight copy:</strong><br>{{crf.bulletinSpotlightCopy}}<br>
     <strong>Dates:</strong>{{crf.bulletinSpotlightDates}}
     </div>
-    <div class="col-md-4"><strong>Coming Soon copy:</strong>{{crf.bulletinComingSoonCopy}}<br>
+    <div class="col-md-4"><strong>Coming Soon copy:</strong><br>{{crf.bulletinComingSoonCopy}}<br>
     <strong>Dates:</strong> {{crf.bulletinComingSoonDates}}
     </div>
-    <div class="col-md-4"><strong>This Week copy:</strong>{{crf.bulletinThisWeekCopy}}<br>
+    <div class="col-md-4"><strong>This Week copy:</strong><br>{{crf.bulletinThisWeekCopy}}<br>
     <strong>Dates: </strong>{{crf.bulletinThisWeekDates}}
     </div>
   </div>
