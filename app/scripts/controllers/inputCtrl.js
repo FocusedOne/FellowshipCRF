@@ -82,8 +82,8 @@ app.controller('inputCtrl', function($scope, $http, $location, $routeParams, crf
     }
 
     $scope.submitCRF = function(){
+
       if($routeParams.id){
-        //TODO: fix re-route to output viewgi
         crfData.update($scope.id, JSON.stringify($scope.form))
         .success(function(data){
           $location.path('/output/' + $scope.id);

@@ -6,6 +6,7 @@ app.controller('listCtrl', function($scope, crfData){
   });
 
   $scope.deleteCRF = function(objectId){
+    //TODO: force view to update on delete
     return crfData.delete(objectId);
   };
 });
