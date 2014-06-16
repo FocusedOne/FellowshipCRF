@@ -32,6 +32,19 @@ app.factory('Users', function($http){
           'password': user.password
         }
       });
+    },
+
+    getUser: function(sessionId){
+      return $http({
+        method: 'GET',
+        url: 'https://api.parse.com/1/users/me' ,
+        headers: {
+          'X-Parse-Application-Id': PARSE_APP_ID,
+          'X-Parse-REST-API-Key': PARSE_REST_KEY,
+          'X-Parse-Session-Token': sessionId
+        }
+      });
     }
+
   };
 });

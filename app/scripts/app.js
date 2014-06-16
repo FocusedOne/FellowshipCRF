@@ -30,6 +30,10 @@ app.config(function($routeProvider) {
       templateUrl: 'views/login.html',
       controller: 'loginCtrl'
     })
+    .when('/session/:sessionId',{
+      templateUrl: '/views/authenticated.html',
+      controller: 'loginCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
