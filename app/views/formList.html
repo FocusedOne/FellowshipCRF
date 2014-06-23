@@ -1,6 +1,16 @@
 <h1>Form List!</h1>
+<div ng-hide="loggedIn">
+  <p>Please login first.</p>
+  <label for="username">Username:</label>
+  <input id="username" type="text" class="form-control" placeholder="username" ng-model="user.username">
+  <br>
+  <label for="password">Password:</label>
+  <input id="password" type="password" class="form-control" placeholder="password" ng-model="user.password">
+  <br>
+  <button class="btn btn-large btn-primary" ng-click="login()">Login</button>
+</div>
 
-<ul>
+<ul ng-show="loggedIn">
   <li ng-repeat="crf in crfList">
     <a href='#/output/{{crf.objectId}}'>{{crf.ministryEventName}}</a> <button class="btn btn-xs btn-primary" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
   </li>
