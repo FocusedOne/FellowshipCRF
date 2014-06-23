@@ -13,6 +13,8 @@ app.controller('inputCtrl', function($scope, $http, $location, $routeParams, crf
     }
     else{
       $scope.form = {
+
+        revisions: 0,
         //ministry info
         ministryEventName: '',
         ministryChoice: '',
@@ -83,6 +85,7 @@ app.controller('inputCtrl', function($scope, $http, $location, $routeParams, crf
 
     $scope.submitCRF = function(){
       if($routeParams.id){
+        $scope.form.revisions++;
         crfData.update($scope.id, JSON.stringify($scope.form))
         .success(function(data){
           $location.path('/output/' + $scope.id);
