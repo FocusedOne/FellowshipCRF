@@ -9,9 +9,23 @@
   <br>
   <button class="btn btn-large btn-primary" ng-click="login()">Login</button>
 </div>
-
-<ul ng-show="loggedIn">
-  <li ng-repeat="crf in crfList">
-    <a href='#/output/{{crf.objectId}}'>{{crf.ministryEventName}}</a> <button class="btn btn-xs btn-primary" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
-  </li>
-</ul>
+<div class="container">
+  <ul ng-show="loggedIn" class="list-unstyled">
+    <li ng-repeat="crf in crfList">
+      <div class="row">
+        <div class="col-md-3">
+          <a href='#/output/{{crf.objectId}}' target="_blank">{{crf.ministryEventName}}</a>
+        </div>
+        <div class="col-md-3">
+          Submitted by: {{crf.ministryProjectContact}}
+        </div>
+        <div class="col-md-3">
+          Last updated: {{crf.updatedAt}}
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-xs btn-primary" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
