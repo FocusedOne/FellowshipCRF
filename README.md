@@ -1,3 +1,3 @@
 # FellowshipCRF
 
-An Angular form with a Firebase backend for doing stuff.
+An Angular CRUD app with a Parse backend for doing stuff.
