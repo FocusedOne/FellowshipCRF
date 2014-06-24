@@ -13,15 +13,16 @@
 </div>
 <div class="col-offset-md-4"></div>
 </div>
-<div class="container">
-  <ul ng-show="loggedIn" class="list-unstyled">
+<div class="container" ng-show="loggedIn">
+  <h4>Search:</h4> <input type="text" ng-model="query" class="form-control" placeholder="Search">
+  <ul class="list-unstyled">
     <li>
       <div class="row">
         <div class="col-md-3"><h4>Project</h4></div>
         <div class="col-md-3"><h4>Submitted by</h4></div>
         <div class="col-md-3"><h4>Last Modified</h4></div>
         <div class="col-md-3"><h4>Delete</h4></div>
-    <li ng-repeat="crf in crfList">
+    <li ng-repeat="crf in crfList | filter: query">
       <div class="row">
         <div class="col-md-3">
           <a href='#/output/{{crf.objectId}}' target="_blank">{{crf.ministryEventName}}</a>
