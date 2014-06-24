@@ -2,20 +2,38 @@
   <h1>Here is your completed form!</h1>
   <a href="#/edit/{{crf.objectId}}"><button class="btn btn-md btn-primary">Edit</button></a>
   <p ng-show="crf.revisions > 0">Revisions: {{crf.revisions}}</p>
+
   <div class="row">
   <h3>Ministry Info</h3>
     <div class="col-md-6">
-      <strong>Event/Project Name:</strong> {{crf.ministryEventName}}
+      <strong>Event/Project Name:</strong>
+      {{crf.ministryEventName}}
     </div>
-    <div class="col-md-6"><strong>Ministry:</strong> {{crf.ministryChoice}}</div>
+    <div class="col-md-6">
+      <strong>Ministry:</strong>
+      {{crf.ministryChoice}}
+    </div>
   </div>
   <div class="row">
-    <div class="col-md-3"><strong>Project Contact:</strong> {{crf.ministryProjectContact}}</div>
-    <div class="col-md-3"><strong>Contact phone:</strong> {{crf.ministryProjectContactPhone}}</div>
-    <div class="col-md-3"><strong>Overseer: </strong>{{ministryOverseer}}</div>
-    <div class="col-md-3"><strong>Overseer phone: </strong>{{ministryOverseerPhone}}</div>
+    <div class="col-md-3">
+      <strong>Project Contact:</strong>
+      {{crf.ministryProjectContact}}
+    </div>
+    <div class="col-md-3">
+      <strong>Contact phone:</strong>
+      {{crf.ministryProjectContactPhone}}
+    </div>
+    <div class="col-md-3">
+      <strong>Overseer: </strong>
+      {{ministryOverseer}}
+    </div>
+    <div class="col-md-3">
+      <strong>Overseer phone: </strong>
+      {{ministryOverseerPhone}}
+    </div>
   </div>
   <hr>
+
   <div class="row">
   <h3>Bulletin</h3>
     <div class="col-md-4"><strong>Spotlight copy:</strong><br>{{crf.bulletinSpotlightCopy}}<br>
@@ -28,5 +46,158 @@
     <strong>Dates: </strong>{{crf.bulletinThisWeekDates}}
     </div>
   </div>
+  <hr>
+
+  <div class="row">
+    <h3>This Month Announcement</h3>
+
+    <div class="col-md-12"><strong>TMAF copy:</strong><br>{{crf.tmafCopy}}<br>
+    <strong>Dates:</strong> {{crf.tmafMonth}}</div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <h3>Connection Center Booth</h3>
+    <div class="col-md-6">
+      <strong>Person Staffing Area:</strong><br>
+      {{crf.connectionCenterPerson}}
+    </div>
+    <div class="col-md-3">
+      <strong>Items Distributed</strong><br>
+      {{connectionCenterItems}}
+    </div>
+    <div class="col-md-3">
+      <strong>Dates:</strong><br>
+      {{crf.connectionCenterDates}}
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <h3>Print Media</h3>
+    <div class="col-md-3">
+      <strong>Print request:</strong>
+      {{crf.printRequest.value}}
+    </div>
+    <div class="col-md-9">
+      <strong>Project info:</strong><br>
+      {{crf.printProjectInfo}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <strong>Logo/Theme:</strong><br>
+      Dates: {{crf.printLogoDates}}
+    </div>
+    <div class="col-md-2">
+      <strong>Posters/Signs/Banners</strong><br>
+      Quantity: {{crf.printPostersQuantity}}<br>
+      Dates: {{crf.printPostersDates}}
+    </div>
+    <div class="col-md-2">
+      <strong>Flyers</strong><br>
+      Quantity: {{crf.printFlyersQuantity}}<br>
+      Dates: {{crf.printFlyersDates}}
+    </div>
+    <div class="col-md-2">
+      <strong>Brochures/Booklets</strong><br>
+      Quantity: {{crf.printBrochuresQuantity}}<br>
+      Dates: {{crf.printBrochuresDates}}
+    </div>
+    <div class="col-md-2">
+      <strong>Notebooks/Covers</strong><br>
+      Quantity: {{crf.printNotebooksQuantiy}}<br>
+      Dates: {{crf.printNotebooksDates}}<br>
+    </div>
+    <div class="col-md-2">
+      <strong>Other</strong><br>
+        Quantity: {{crf.printOtherQuantity}}<br>
+        Dates: {{crf.printOtherDates}}<br>
+        Description: {{crf.printOtherDescription}}
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <h3>Website</h3>
+    <div class="col-md-4">
+      <strong>Site:</strong>
+      {{crf.websiteSite.value}}
+    </div>
+    <div class="col-md-4">
+      <strong>Page:</strong>
+      {{crf.websiteWebpage}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Copy:</strong><br>
+      {{crf.websiteCopyText}}<br>
+      <strong>Dates:</strong> {{crf.websiteCopyDates}}
+    </div>
+    <div class="col-md-2">
+      <strong>Graphics type: </strong>
+        <ul class="list-unstyled">
+          <li ng-repeat="gfxType in crf.websiteGfxType">
+            {{gfxType}}
+          </li>
+        </ul>
+      <strong>Dates:</strong> {{crf.websiteGfxDates}}
+    </div>
+    <div class="col-md-4">
+      <strong>Description:</strong> <br>
+      {{crf.websiteGfxDescription}}
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <h3>Social Media</h3>
+    <div class="col-md-2">
+      <strong>Campus: </strong>
+        <ul class="list-unstyled">
+          <li ng-repeat="campus in crf.socialCampus">
+            {{campus}}
+          </li>
+        </ul>
+    </div>
+    <div class="col-md-2">
+      <strong>Dates:</strong> {{crf.socialDates}}
+    </div>
+    <div class="col-md-6">
+      <strong>Copy:</strong><br>
+      {{crf.socialCopy}}
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <h3>Email Blast</h3>
+    <div class="col-md-3">
+      <strong>Campus: </strong>
+        <ul class="list-unstyled">
+          <li ng-repeat="campus in crf.emailCampus">
+            {{campus}}
+          </li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+      <strong>Mailing list: </strong><br>
+      {{crf.emailList}}
+    </div>    
+    <div class="col-md-3">
+      <strong>Dates: </strong><br>
+      {{crf.emailDates}}
+    </div>
+    <div class="col-md-3">
+      <strong>Video/Graphics Embed: </strong><br>
+      {{crf.emailEmbed}}
+    </div>   
+  </div>
+  <div class="row">
+    <strong>Copy:</strong><br>
+    {{crf.emailCopy}}
+  </div>
+
   <a href="#/">Submit another form</a>
 </div>
