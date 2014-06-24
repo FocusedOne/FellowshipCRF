@@ -31,7 +31,7 @@
           {{crf.ministryProjectContact}}
         </div>
         <div class="col-md-3">
-          {{crf.updatedAt}}
+          {{crf.updatedAt | date:'yyyy-MM-dd HH:mm'}}
         </div>
         <div class="col-md-3">
           <button class="btn btn-xs btn-danger" ng-click="remove(crfList, $index, crf.objectId)">Deleted!</button>
