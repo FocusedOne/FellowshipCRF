@@ -1,5 +1,7 @@
+<div class="container">
 <h1>Form List!</h1>
-<div ng-hide="loggedIn">
+<div class="col-offset-md-4"></div>
+<div ng-hide="loggedIn" class="col-md-4">
   <p>Please login first.</p>
   <label for="username">Username:</label>
   <input id="username" type="text" class="form-control" placeholder="username" ng-model="user.username">
@@ -9,21 +11,29 @@
   <br>
   <button class="btn btn-large btn-primary" ng-click="login()">Login</button>
 </div>
+<div class="col-offset-md-4"></div>
+</div>
 <div class="container">
   <ul ng-show="loggedIn" class="list-unstyled">
+    <li>
+      <div class="row">
+        <div class="col-md-3"><h4>Project</h4></div>
+        <div class="col-md-3"><h4>Submitted by</h4></div>
+        <div class="col-md-3"><h4>Last Modified</h4></div>
+        <div class="col-md-3"><h4>Delete</h4></div>
     <li ng-repeat="crf in crfList">
       <div class="row">
         <div class="col-md-3">
           <a href='#/output/{{crf.objectId}}' target="_blank">{{crf.ministryEventName}}</a>
         </div>
         <div class="col-md-3">
-          Submitted by: {{crf.ministryProjectContact}}
+          {{crf.ministryProjectContact}}
         </div>
         <div class="col-md-3">
-          Last updated: {{crf.updatedAt}}
+          {{crf.updatedAt}}
         </div>
         <div class="col-md-3">
-          <button class="btn btn-xs btn-primary" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
+          <button class="btn btn-xs btn-danger" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
         </div>
       </div>
     </li>
