@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('listCtrl', function($scope, crfData, Users){
+app.controller('listCtrl', function($scope, $window, crfData, Users){
   $scope.currentUser = '';
   $scope.loggedIn = false;
   $scope.user = {
@@ -15,13 +15,25 @@ app.controller('listCtrl', function($scope, crfData, Users){
     });
   };
 
-  crfData.list().success(function(data){
-    $scope.crfList = data.results;
-  });
+  $scope.getList = function(){
+    crfData.list().success(function(data){
+      $scope.crfList = data.results;
+    });
+  };
 
   $scope.deleteCRF = function(objectId){
     //TODO: force view to update on delete
-    return crfData.delete(objectId);
+    crfData.delete(objectId);
+
   };
 
+  $scope.remove = function(array, index, objectId){
+    var confirmed = $window.confirm('Are you sure you want to delete this? This action cannot be undone.');
+    if (confirmed){
+      array.splice(index, 1);
+      crfData.delete(objectId);
+    }
+  };
+
+  $scope.getList();
 });

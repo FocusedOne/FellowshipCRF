@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Form List!</h1>
+<h1>Projects</h1>
 <div class="col-offset-md-4"></div>
 <div ng-hide="loggedIn" class="col-md-4">
   <p>Please login first.</p>
@@ -34,7 +34,7 @@
           {{crf.updatedAt}}
         </div>
         <div class="col-md-3">
-          <button class="btn btn-xs btn-danger" ng-click="deleteCRF(crf.objectId)">Deleted!</button>
+          <button class="btn btn-xs btn-danger" ng-click="remove(crfList, $index, crf.objectId)">Deleted!</button>
         </div>
       </div>
     </li>
