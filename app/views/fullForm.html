@@ -12,51 +12,51 @@
     <div class="col-xs-4">
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="campusWidePromoCheck"> Campus-Wide Promotion
+          <input type="checkbox" ng-model="form.campusWidePromoCheck"> Campus-Wide Promotion
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="bulletinCheck"> Bulletin Announcement
+          <input type="checkbox" ng-model="form.bulletinCheck"> Bulletin Announcement
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="tmafCheck"> "This Month" Announcement
-        </label>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="onlineEventCheck"> Online Event Registration
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="connectionCenterCheck"> Connection Center Booth
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="printMediaCheck"> Print Media
+          <input type="checkbox" ng-model="form.tmafCheck"> "This Month" Announcement
         </label>
       </div>
     </div>
     <div class="col-xs-4">
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="websiteCheck"> Website
+          <input type="checkbox" ng-model="form.onlineEventCheck"> Online Event Registration
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="socialCheck"> Social Media
+          <input type="checkbox" ng-model="form.connectionCenterCheck"> Connection Center Booth
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="emailCheck"> Email Blast
+          <input type="checkbox" ng-model="form.printMediaCheck"> Print Media
+        </label>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="form.websiteCheck"> Website
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="form.socialCheck"> Social Media
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="form.emailCheck"> Email Blast
         </label>
       </div>
     </div>
@@ -118,7 +118,7 @@
 
 
 <hr>
-<div ng-show="campusWidePromoCheck">
+<div ng-show="form.campusWidePromoCheck">
   <!-- Campus-Wide Promotion -->
 <h2>Campus-Wide Promotion</h2>
   <div class="row">
@@ -147,7 +147,7 @@
       <p>If selected for campus-wide promotion, your ministry will receive promotional space in the three-tier plaza signage, website home gallery, and MyFellowship app.</p>
   <hr>
 </div>
-<div ng-show="bulletinCheck">
+<div ng-show="form.bulletinCheck">
   <!-- Bulletin Announcement -->
 <h2>Bulletin Announcement</h2>
   <div class="row">
@@ -184,7 +184,7 @@
   </div>
 <hr>
 </div>
-<div ng-show="tmafCheck">
+<div ng-show="form.tmafCheck">
   <!-- TMAF Announcement -->
 <h2>"This Month At Fellowship" Announcement</h2>
   <div class="row">
@@ -203,7 +203,7 @@
   </div>
 <hr>
 </div>
-<div ng-show="connectionCenterCheck">
+<div ng-show="form.connectionCenterCheck">
 <!-- Connection Center Booth -->
   <h2>Connection Center Booth</h2>
   <div class="row">
@@ -228,7 +228,7 @@
   </div>
 <hr>
 </div>
-<div ng-show="printMediaCheck">
+<div ng-show="form.printMediaCheck">
   <!-- Print Media -->
 <h2>Print Media</h2>
   <div class="row">
@@ -341,7 +341,7 @@
   </div>
 <hr>
 </div>
-<div ng-show="websiteCheck">
+<div ng-show="form.websiteCheck">
   <!-- Website -->
 <h2>Website</h2>
   <div class="row">
@@ -411,7 +411,7 @@
   </div>
   <hr>
 </div>
-<div ng-show="socialCheck">
+<div ng-show="form.socialCheck">
   <!-- Social Media -->
   <h2>Social Media Messaging</h2>
   <div class="row">
@@ -457,7 +457,7 @@
     </div>
   <hr>
 </div>
-<div ng-show="emailCheck">
+<div ng-show="form.emailCheck">
   <!-- Email Blast -->
 <h2>Email Blast</h2>
   <div class="row">

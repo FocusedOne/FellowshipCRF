@@ -14,6 +14,16 @@ app.controller('inputCtrl', function($scope, $http, $location, $routeParams, crf
     else{
       $scope.form = {
 
+        campusWidePromoCheck: false,
+        bulletinCheck: false,
+        tmafCheck: false,
+        onlineEventCheck: false,
+        connectionCenterCheck: false,
+        printMediaCheck: false,
+        websiteCheck: false,
+        socialCheck: false,
+        emailCheck: false,
+
         revisions: 0,
         //ministry info
         ministryEventName: '',

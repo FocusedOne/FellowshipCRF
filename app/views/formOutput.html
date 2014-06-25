@@ -32,9 +32,9 @@
       {{crf.ministryOverseerPhone}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  <hr ng-show="crf.bulletinCheck">
+  <div class="row" ng-show="crf.bulletinCheck">
   <h3>Bulletin</h3>
     <div class="col-md-4"><strong>Spotlight copy:</strong><br>{{crf.bulletinSpotlightCopy}}<br>
     <strong>Dates:</strong>{{crf.bulletinSpotlightDates}}
@@ -46,17 +46,18 @@
     <strong>Dates: </strong>{{crf.bulletinThisWeekDates}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  
+  <hr ng-show="crf.tmafCheck">
+  <div class="row" ng-show="crf.tmafCheck">
     <h3>This Month Announcement</h3>
 
     <div class="col-md-12"><strong>TMAF copy:</strong><br>{{crf.tmafCopy}}<br>
     <strong>Dates:</strong> {{crf.tmafMonth}}</div>
   </div>
-  <hr>
+  <hr ng-show="crf.tmafCheck">
 
-  <div class="row">
+  <div class="row" ng-show="crf.connectionCenterCheck">
     <h3>Connection Center Booth</h3>
     <div class="col-md-6">
       <strong>Person Staffing Area:</strong><br>
@@ -71,9 +72,9 @@
       {{crf.connectionCenterDates}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  <hr ng-show="crf.printMediaCheck">
+  <div class="row" ng-show="crf.printMediaCheck">
     <h3>Print Media</h3>
     <div class="col-md-3">
       <strong>Print request:</strong>
@@ -84,7 +85,7 @@
       {{crf.printProjectInfo}}
     </div>
   </div>
-  <div class="row">
+  <div class="row" ng-show="crf.printMediaCheck">
     <div class="col-md-2">
       <strong>Logo/Theme:</strong><br>
       Dates: {{crf.printLogoDates}}
@@ -116,9 +117,9 @@
         Description: {{crf.printOtherDescription}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  <hr ng-show="crf.websiteCheck">
+  <div class="row" ng-show="crf.websiteCheck">
     <h3>Website</h3>
     <div class="col-md-4">
       <strong>Site:</strong>
@@ -129,7 +130,7 @@
       {{crf.websiteWebpage}}
     </div>
   </div>
-  <div class="row">
+  <div class="row" ng-show="crf.websiteCheck">
     <div class="col-md-6">
       <strong>Copy:</strong><br>
       {{crf.websiteCopyText}}<br>
@@ -149,9 +150,9 @@
       {{crf.websiteGfxDescription}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  <hr ng-show="crf.socialCheck">
+  <div class="row" ng-show="crf.socialCheck">
     <h3>Social Media</h3>
     <div class="col-md-2">
       <strong>Campus: </strong>
@@ -169,9 +170,9 @@
       {{crf.socialCopy}}
     </div>
   </div>
-  <hr>
 
-  <div class="row">
+  <hr ng-show="crf.emailCheck">
+  <div class="row" ng-show="crf.emailCheck">
     <h3>Email Blast</h3>
     <div class="col-md-3">
       <strong>Campus: </strong>
@@ -194,10 +195,11 @@
       {{crf.emailEmbed}}
     </div>   
   </div>
-  <div class="row">
+  <div class="row" ng-show="crf.emailCheck">
     <strong>Copy:</strong><br>
     {{crf.emailCopy}}
   </div>
 
+  <hr>
   <a href="#/">Submit another form</a>
 </div>
