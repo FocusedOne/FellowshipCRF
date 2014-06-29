@@ -5,3 +5,9 @@ dist
 app/bower_components
 scripts/keys.js
 app/scripts/keys.js
+.bowerrc
+.editorconfig
+.gitattributes
+.gitignore
+.jshintrc
+.travis.yml
