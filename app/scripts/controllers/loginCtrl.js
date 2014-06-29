@@ -31,7 +31,6 @@ app.controller('loginCtrl', function($scope, $location, $routeParams, Users){
         $scope.currentUser = data;
       }
       else{
-        console.log('nope. this session is exipired');
         console.log('Session Expired, please login again.');
         $location.path('/login');
       }
