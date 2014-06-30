@@ -3,7 +3,8 @@
 app.factory('crfData', function($http, $location){
   return {
     apiPath: 'https://api.parse.com/1/classes/crf',
-    currentObject: '',
+
+    //save a new data object to Parse
     save: function(formData){
       return $http({
         method: 'POST',
@@ -20,6 +21,7 @@ app.factory('crfData', function($http, $location){
       });
     },
 
+    //opens Parse object objectId
     open: function(objectId){
       return $http({
         method: 'GET',
@@ -32,7 +34,7 @@ app.factory('crfData', function($http, $location){
       });
     },
 
-
+    //lists all items in the Parse class
     list: function(){
       return $http({
         method: 'GET',
@@ -45,6 +47,7 @@ app.factory('crfData', function($http, $location){
       });
     },
 
+    //updates an existing data object in Parse
     update: function(objectId, formData){
       return $http({
         method: 'PUT',
@@ -61,6 +64,7 @@ app.factory('crfData', function($http, $location){
       });
     },
 
+    //removes an object from Parse
     delete: function(objectId){
       console.log('crfData.delete hit');
       return $http({

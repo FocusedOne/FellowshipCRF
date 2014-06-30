@@ -4,6 +4,7 @@ app.factory('Users', function($http){
   return {
     apiPath: 'https://api.parse.com/1/users',
 
+    //Create a new users, stored in Parse backend
     create: function(user){
       console.log('users.create hit with user: ' + user.username);
       return $http({
@@ -18,6 +19,7 @@ app.factory('Users', function($http){
       });
     },
 
+    //Logs in user
     login: function(user){
       return $http({
         method: 'GET',
@@ -34,6 +36,7 @@ app.factory('Users', function($http){
       });
     },
 
+    //Gets current user from Parse
     getUser: function(sessionId){
       return $http({
         method: 'GET',

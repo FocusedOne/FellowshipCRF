@@ -99,6 +99,7 @@ else{
   };
 }
 
+//$scope.submitCRF: Posts form data to Parse via crfData service
 $scope.submitCRF = function(){
   if($routeParams.id){
     $scope.form.revisions++;

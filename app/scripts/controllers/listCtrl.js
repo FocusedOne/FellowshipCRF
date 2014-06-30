@@ -22,9 +22,7 @@ app.controller('listCtrl', function($scope, $window, crfData, Users){
   };
 
   $scope.deleteCRF = function(objectId){
-    //TODO: force view to update on delete
     crfData.delete(objectId);
-
   };
 
   $scope.remove = function(array, index, objectId){
